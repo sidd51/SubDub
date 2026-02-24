@@ -7,6 +7,7 @@ A full-stack web application to manage, track, and analyze your subscriptions wi
 ## 🌐 Live Demo
 
 🔗 Frontend: https://sub-dub.vercel.app
+
 🔗 Backend API: https://subdub-kj3h.onrender.com
 
 ---
@@ -144,10 +145,6 @@ This project was built as part of learning full-stack development and deployment
 
 ---
 
-## 📬 Contact
 
-If you have any feedback or suggestions, feel free to reach out!
-
----
 
 ⭐ If you like this project, consider giving it a star!
