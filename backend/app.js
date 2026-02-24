@@ -9,7 +9,16 @@ import connectToDatabase from './database/mongodb.js';
 import errorMiddleware from './middlewares/error.middleware.js'
 import arcjetMiddleware from './middlewares/arcjet.middleware.js';
 import { startRemainderJob } from './cron/remainder.cron.js';
+
+import cors from 'cors';
+
+
 const app=express();
+
+app.use(cors({
+  origin: 'https://sub-dub.vercel.app',
+  credentials: true
+}));
 
 //inbuilt express middlewares
 app.use(express.json()); //allows us to handle json data in requests
@@ -27,11 +36,19 @@ app.get('/', (req,res)=>{
   res.send("Welcome to the Subscription Tracker AP!!");
 });
 
-app.listen(PORT, async ()=>{
-  console.log(`Subscription Tracker API is running on http://localhost:${PORT}`);
- 
-   //connect to db
-   await connectToDatabase();
-   //start cron
+const startServer = async () => {
+  try {
+    await connectToDatabase();
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+
     startRemainderJob();
-})
+  } catch (error) {
+    console.error("Startup error:", error);
+    process.exit(1);
+  }
+};
+
+startServer();
