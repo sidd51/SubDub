@@ -139,12 +139,3 @@ npm run dev
 
 ---
 
-## 🙌 Acknowledgements
-
-This project was built as part of learning full-stack development and deployment workflows.
-
----
-
-
-
-⭐ If you like this project, consider giving it a star!
