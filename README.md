@@ -137,5 +137,4 @@ npm run dev
 * Backend deployed on **Render**
 * MongoDB hosted on **MongoDB Atlas**
 
----
 
